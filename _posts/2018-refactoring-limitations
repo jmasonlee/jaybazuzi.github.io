@@ -1,0 +1,24 @@
+
+Two refactoring bugs:
+
+1. Extract the indicated line, and accept the ReSharper default name of `do_work`.
+2. Extract the indicated line, and give a different name.
+
+```
+struct S
+{
+    void F();
+    int i = 0;
+};
+
+void S::F(){ i++; }
+
+int main()
+{
+    auto do_work = [](S& s) { s.i--; };
+    S s;
+    s.F(); // extract this line
+    cout << s.i << endl;
+}
+```
+
