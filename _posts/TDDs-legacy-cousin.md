@@ -51,16 +51,16 @@ Let's say we're working on a module that makes it easy for developers to find in
 
 ```
 random_restaurants("Calgary", 3)
-# => ["Ten Foot Henry", "Model Milk", "Freshii"]
+ => ["Ten Foot Henry", "Model Milk", "Freshii"]
 
 top_5_restaurants("Calgary")
-# => [
-# 	{name: "Ten Foot Henry", rating: 5, reviews: 402}
-# 	{name: "The Porch", rating: 5, reviews: 6}
-# 	{name: "Cotto Italian Comfort Food", rating: 4.5, reviews: 60}
-# 	{name: "Tokyo Street Market", rating: 4, reviews: 103}
-# 	{name: "Model Milk", rating: 4, reviews: 240}
-#    ]
+ => [
+ 	{name: "Ten Foot Henry", rating: 5, reviews: 402}
+ 	{name: "The Porch", rating: 5, reviews: 6}
+ 	{name: "Cotto Italian Comfort Food", rating: 4.5, reviews: 60}
+ 	{name: "Tokyo Street Market", rating: 4, reviews: 103}
+ 	{name: "Model Milk", rating: 4, reviews: 240}
+    ]
 ```
 Notice anything? Our random results are all returned in order of rating from highest to lowest. (Two of them are also in the top 5 restaurants, but that's only to illustrate the observable behaviour) Even though this isn't intentional and it's not tested, it's a behaviour some of our users could rely on.
 
@@ -89,16 +89,21 @@ finding small steps that are smaller than the smallest one you can think of.
 Although Hyrum's Law and Gnarly Code can cause issues with TDD in any codebase, they are particulary prevalent in legacy systems. 
 Developers working in these systems need a differents set of tools to give them confidence in the changes they're making, and to 
 help make those changes easy. The tools we use in these cases don't precisely fit the red-green-refactor cycle, though they fit the
-spirit of TDD. Because of this, we call them TDD's Legacy Cousins. We've collected
+spirit of TDD. Because of this, we call them TDD's Legacy Cousins. Below are some examples of common problems that make TDD hard in 
+existing codebases, along with a links to some techniques we find useful for dealing with them. We hope you find them helpful, 
+and we'd love to hear yours!
 
 ### Cousins for Gnarly code
 
-| Pulling out hard-to-test code | [Peel & Slice refactoring](https://youtu.be/sXqRWXWiXYo) |
-| Not sure what code does | Read by Refactoring & naming as a process |
+- **Pulling out hard-to-test code**: [Peel & Slice refactoring](https://youtu.be/sXqRWXWiXYo)
+- **Not sure what code does**: [Read by Refactoring](https://www.jamasoftware.com/blog/read-by-refactoring/) & [naming as a process](https://arlobelshee.com/good-naming-is-a-process-not-a-single-step/)
+- **Can't refactor until code is tested, can't test until code is refactored**: [proveable refactorings](https://github.com/digdeeproots/provable-refactorings) & [approval tests](https://coding-is-like-cooking.info/2019/08/approvals-and-mutation-testing/)
 
 
 ### Cousins for Hyrum's Law
-
+- **Need to make behaviour-preserving changes**:
+- **We introduced a "bug" and need to undo it quickly!**:
+- **We want to make sure we catch future issues earlier**:
 
 === Pretty Sentences for blog ideas below ===
 
