@@ -4,6 +4,7 @@ title: TDDs Legacy Cousins
 ---
 By [Jay Bazuzi]()  and  [Jacqueline Bilston](https://twitter.com/jmasonlee)
 
+_If you can't TDD, your code needs TLC_
 
 ### This article is about TDD, and where it isn't useful. 
 
@@ -39,10 +40,31 @@ We know of two reasons that this might happen:
 ![](https://imgs.xkcd.com/comics/workflow.png)
 
 A story we sometimes tell with TDD is "because you diligently follow Red/Green, you are always free to Refactor to your heart's 
-content. The tests will verify that your refactorings are safe/correct." Because you have tests for every intent you put in the
+content. The tests will verify that your refactorings are safe and correct." Because you have tests for every intent you put in the
  code, as long as the tests still pass, the refactoring is legit.
 
 ### But that isn't true when callers of the code might do things you haven't thought of.
+
+Let's say we're working on a module that makes it easy for developers to find information about restaurants. The module currently has two important methods: 
+- A method that accepts a city name, and returns a list of names for n random restaurants in that city.
+- A method that accepts a city name, and returns a list of restaurant ratings for the top 5 restaurants in the city, ordered by rating from highest to lowest.
+
+```
+random_restaurants("Calgary", 3)
+# => ["Ten Foot Henry", "Model Milk", "Freshii"]
+
+top_5_restaurants("Calgary")
+# => [
+# 	{name: "Ten Foot Henry", rating: 5, reviews: 402}
+# 	{name: "The Porch", rating: 5, reviews: 6}
+# 	{name: "Cotto Italian Comfort Food", rating: 4.5, reviews: 60}
+# 	{name: "Tokyo Street Market", rating: 4, reviews: 103}
+# 	{name: "Model Milk", rating: 4, reviews: 240}
+#    ]
+```
+Notice anything? Our random results are all returned in order of rating from highest to lowest. (Two of them are also in the top 5 restaurants, but that's only to illustrate the observable behaviour) Even though this isn't intentional and it's not tested, it's a behaviour some of our users could rely on.
+
+We want to add a new method that returns contact information for all the restaurants in the city, in alphabetical order. We diligently follow red-green-refactor and implement the new feature so that none of the existing tests break, but when we ship it, we suddenly get complaints that the random_restaurants list is in alphabetical order. What went wrong?
 
 ## Gnarly code
 
