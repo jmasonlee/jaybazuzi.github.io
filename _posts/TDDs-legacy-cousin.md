@@ -75,7 +75,7 @@ There's no easy way to write a test for the new behavior. I could write a test f
 thing, Class `B` does the new thing... but this test does not tell me if I missed the all-important Class `J`.
 
 Or suppose I want to change a few lines of code in a god class, or in a function that takes a god class as a parameter. My test will
-need a lot of setup for the god class, which menas it won't be readable, and will execute too much code. 
+need a lot of setup for the god class, which means it won't be readable, and will execute too much code. 
 
 In both of these cases, the approach we would take in red-green-refactor TDD would be to write a test that takes a smaller step 
 to get to green faster. On each cycle, the refactoring would move us a little closer to the design or feature that is too
