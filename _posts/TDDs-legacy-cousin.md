@@ -6,6 +6,17 @@ By [Jay Bazuzi]()  and  [Jacqueline Bilston](https://twitter.com/jmasonlee)
 
 _If you can't TDD, your code needs TLC_
 
+## _Does this sound familiar?_
+
+A company sends its engineers to Test-Driven Development training, but when they try to apply it 
+to their real product code, they get stuck. This could be because of organizational or team-based issues, 
+but even if the entire organization and team is dedicated to using TDD on their code, the code itself could be the blocker.
+
+We know of two reasons that this might happen:
+
+1. If the code is already being used, [Hyrum's law](https://www.hyrumslaw.com/) applies, and everything is a breaking change
+2. If the code is too gnarly, it's difficult to take small steps.
+
 ### This article is about TDD, and where it isn't useful. 
 
 Like many terms in our field, "TDD" means different things to different people. In order to have a 
@@ -23,17 +34,6 @@ Tests should not execute a lot of code that is not relevant to the thing being t
 in capability of the system under test.
 
 We love TDD, but there are certain contexts where it's not the right fit. 
-
-## _Does this sound familiar?_
-
-A company sends its engineers to Test-Driven Development training, but when they try to apply it 
-to their real product code, they get stuck. This could be because of organizational or team-based issues, 
-but even if the entire organization and team is dedicated to using TDD on their code, the code itself could be the blocker.
-
-We know of two reasons that this might happen:
-
-1. If the code is already being used, [Hyrum's law](https://www.hyrumslaw.com/) applies, and everything is a breaking change
-2. If the code is too gnarly, it's difficult to take small steps.
 
 ## Hyrum's Law
 
