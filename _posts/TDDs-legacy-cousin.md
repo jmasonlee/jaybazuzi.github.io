@@ -97,9 +97,9 @@ and we'd love to hear yours!
 
 - **Pulling out hard-to-test code**: [Peel & Slice refactoring](https://youtu.be/sXqRWXWiXYo)
 - **Not sure what code does**: [Read by Refactoring](https://www.jamasoftware.com/blog/read-by-refactoring/) & [naming as a process](https://arlobelshee.com/good-naming-is-a-process-not-a-single-step/)
-- **Can't refactor until code is tested, can't test until code is refactored**: [proveable refactorings](https://github.com/digdeeproots/provable-refactorings) & [approval tests](https://coding-is-like-cooking.info/2019/08/approvals-and-mutation-testing/)
+- **Can't refactor until code is tested, can't test until code is refactored**: [Proveable Refactorings](https://github.com/digdeeproots/provable-refactorings) & [approval tests](https://coding-is-like-cooking.info/2019/08/approvals-and-mutation-testing/)
 
 
 ### Cousins for Hyrum's Law
 - **Need to make behaviour-preserving changes**: [Proveable Refactorings](https://github.com/digdeeproots/provable-refactorings) and *very careful refactoring* when a proveable one doesn't exist
-- **We introduced a "bug" and need to undo it quickly!**: [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) and [working in small steps]()
+- **We introduced a "bug" and need to undo it quickly!**: [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) and [working in small steps](https://wiki.c2.com/?RefactoringInVerySmallSteps)
